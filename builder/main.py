@@ -165,8 +165,7 @@ else:
         UPLOADERFLAGS=[
             "-p", "$BOARD_MCU",
             "-C",
-            join(env.PioPlatform().get_package_dir("tool-avrdude") or "",
-                 "avrdude.conf"),
+            join(env.PioPlatform().get_package_dir("framework-arduino-atmegaxxm1-c1"),"avr","avrdude.conf"),
             "-c", "$UPLOAD_PROTOCOL"
         ],
         UPLOADHEXCMD='$UPLOADER $UPLOADERFLAGS -U flash:w:$SOURCES:i',
